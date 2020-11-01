@@ -115,12 +115,14 @@ def station_stats(df):
 
     common_end = str(df['End Station'].mode()[0])
 
-    print("Most commonly used end station: " + common_end)
+    common_end = df['End Station'].mode()[0]
+
+    print("Most commonly used end station: {}".format(common_end))
+
 
     df['combination'] = (df['Start Station'] + ' - ' + df['End Station'])
-    common_combination = str(df['combination'].mode()[0])
-    print("Most frequent combination of start station and end station trip is: " + common_combination)
-
+    common_combination = df['combination'].mode()[0]
+    print("Most frequent combination of start station and end station trip is: {}".format(common_combination))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
@@ -150,23 +152,22 @@ def user_stats(df):
     start_time = time.time()
 
     user_types = df['User Type'].value_counts()
-    print("Number of user types: " + str(user_types))
-
+    print("Number of user types: {}".format(user_types))
 
     try:
         gender_count = df['Gender'].value_counts()
-        print("Counts of gender: " + str(gender_count))
+        print("Counts of gender: {}".format(gender_count))
     except:
         print("There's no gender data for this city.")
 
     try:
-        earliest_year = str(int(df['Birth Year'].min()))
-        recent_year = str(int(df['Birth Year'].max()))
-        common_year = str(int(df['Birth Year'].mode()[0]))
+        earliest_year = int(df['Birth Year'].min())
+        recent_year = int(df['Birth Year'].max())
+        common_year = int(df['Birth Year'].mode()[0])
 
-        print("Earliest birth year: " + earliest_year)
-        print("Most recent birth year: " + recent_year)
-        print("Most common birth year: " + common_year)
+        print("Earliest birth year: {}".format(earliest_year))
+        print("Most recent birth year: {}".format(recent_year))
+        print("Most common birth year: {}".format(common_year))
     except:
         print("There's no birth year data for this city.")
 
