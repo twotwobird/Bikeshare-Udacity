@@ -1,11 +1,12 @@
 ### Date created
-2020 October 31
+2020 October 31 (Halloween!)
 
 ### Project Title
-Bikshare Project
+Bike share Project
 
 ### Description
-Analyze bikeshare data from Chicago, New York City, and Washington.
+Analyze bike share data from Chicago, New York City, and Washington.
+Project completed as part of Udacity Programming for Data Science with Python Nanodegree.
 
 ### Files used
 chicago.csv, new_york_city.csv, washington.csv
